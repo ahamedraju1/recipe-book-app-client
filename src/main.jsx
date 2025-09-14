@@ -10,6 +10,7 @@ import addRecipes from './components/addRecipes.jsx';
 import Headers from './components/Headers.jsx';
 import Register from './components/Register.jsx';
 import AuthProvider from './Context/AuthProvider.jsx';
+import Login from './components/Login.jsx';
 
 
 const router = createBrowserRouter([
@@ -27,6 +28,10 @@ const router = createBrowserRouter([
   {
     path: '/register',
     Component: Register
+  },
+  {
+    path: '/login',
+    Component: Login
   }
 ]);
 
