@@ -4,8 +4,10 @@ import { Link, NavLink } from 'react-router';
 import { AuthContext } from '../Context/AuthContext';
 
 const Headers = () => {
-
+    const {user, userSignOut} = use(AuthContext);
+    
     const [menu, setMenu] = useState(false);
+
     useEffect(() => {
         if (menu) {
             document.body.style.overflow = "hidden"
@@ -16,6 +18,13 @@ const Headers = () => {
 
     const handleLogOut = () =>{
         console.log("user trying to log out");
+        userSignOut()
+        .then(()=>{
+            alert("sign out Successfully ")
+        })
+        .catch(error=>{
+            console.log(error)
+        })
 
          
     }
@@ -52,8 +61,13 @@ const Headers = () => {
                 }
                 </div>
                 <div className="navbar-end">
-                    <button onClick={handleLogOut} className='btn btn-secondary'>Log out</button>
-                    {/* <Link to='/auth/login'>Login</Link> */}
+
+                    {
+                        user ?
+                        <button onClick={handleLogOut} className='btn btn-secondary'>Log out</button> :
+                        <Link to='/login' className='btn btn-secondary'>Login</Link>
+
+                    }
                 </div>
             </div>
         </nav>
