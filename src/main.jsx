@@ -11,6 +11,7 @@ import Headers from './components/Headers.jsx';
 import Register from './components/Register.jsx';
 import AuthProvider from './Context/AuthProvider.jsx';
 import Login from './components/Login.jsx';
+import notFound from './components/notFound.jsx';
 
 
 const router = createBrowserRouter([
@@ -32,6 +33,11 @@ const router = createBrowserRouter([
   {
     path: '/login',
     Component: Login
+  },
+
+  {
+    path: '/*',
+    Component: notFound
   }
 ]);
 
