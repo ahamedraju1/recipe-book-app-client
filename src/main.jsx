@@ -7,6 +7,7 @@ import { RouterProvider } from "react-router/dom";
 import Home from './components/Home.jsx';
 import MainLayout from './Layouts/MainLayout.jsx';
 import addRecipes from './components/addRecipes.jsx';
+import Headers from './components/Headers.jsx';
 
 
 const router = createBrowserRouter([
@@ -15,9 +16,10 @@ const router = createBrowserRouter([
     Component: MainLayout,
     children: [
       {index: true, Component: Home},
-      {
-          
-      },
+      // {
+      //   path: '/headers',
+      //   Component: Headers 
+      // },
 
       {path:'/addRecipes',
         Component: addRecipes
