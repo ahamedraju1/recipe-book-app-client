@@ -1,0 +1,44 @@
+[
+  {
+    "id": 1,
+    "title": "Spaghetti Carbonara",
+    "image": "https://i.ibb.co.com/1JrFkm5f/give-me-some-mexican-food-items-it-would-be-single-dish-item.jpg",
+    "cuisine_type": "Italian",
+    "like_count": 1242
+  },
+  {
+    "id": 2,
+    "title": "Chicken Biryani",
+    "image": "https://i.ibb.co.com/tM132Z2b/fish-curry-item-1.jpg",
+    "cuisine_type": "Indian",
+    "like_count": 2421
+  },
+  {
+    "id": 3,
+    "title": "Sushi Platter",
+    "image": "https://i.ibb.co.com/kVXxMghk/rice-with-hilsa-fish.jpg",
+    "cuisine_type": "Japanese",
+    "like_count": 1253
+  },
+  {
+    "id": 4,
+    "title": "Tacos al Pastor",
+    "image": "https://i.ibb.co.com/jPzd2vq4/bengali-food-item-mutton-khichuri-with-eggs.jpg",
+    "cuisine_type": "Mexican",
+    "like_count": 2213
+  },
+  {
+    "id": 5,
+    "title": "French Croissant",
+    "image": "https://i.ibb.co.com/DPXQMK9h/Please-give-me-some-images-of-food-and-single-recipe-images.jpg",
+    "cuisine_type": "French",
+    "like_count": 1804
+  },
+  {
+    "id": 6,
+    "title": "Italian veg salad",
+    "image": "https://i.ibb.co.com/VY298Lf5/Please-give-me-some-images-of-food-and-single-recipe-images-1.jpg",
+    "cuisine_type": "Italian",
+    "like_count": 1421
+  }
+]

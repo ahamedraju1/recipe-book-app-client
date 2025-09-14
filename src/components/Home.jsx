@@ -2,6 +2,7 @@ import React from 'react';
 import Headers from './Headers';
 import { Outlet } from 'react-router';
 import Slider from './Slider';
+import TopRecipes from './TopRecipes';
 
 const Home = () => {
     return (
@@ -12,6 +13,7 @@ const Home = () => {
             <div>
                 <Outlet></Outlet>
                 <Slider></Slider>
+                <TopRecipes></TopRecipes>
             </div>
         </div>
     );
