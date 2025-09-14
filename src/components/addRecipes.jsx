@@ -1,4 +1,6 @@
 import React from 'react';
+import Headers from './Headers';
+// import banner from '../assets/slider_2.jpg'
 
 const addRecipes = () => {
 
@@ -26,9 +28,15 @@ const addRecipes = () => {
 
     return (
         <>
-            <div className='p-14 space-y-6'>
+        <Headers/>
+        {/* <div className="my-12">
+        <div className='flex justify-center items-center absolute'>
+         <img className='object-cover relative w-[1280px] h-[600px]' src={banner} alt="" />
+        </div>
+        </div> */}
+            <div className='p-14 space-y-6 mt-32'>
                 <h1 className='text-6xl  text-center'>Add Recipes </h1>
-                <p className='text-center'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ad dolore consectetur doloribus?</p>
+                <p className='text-center'>Add your favorite recipes to our collection! Include the ingredients, step-by-step instructions, and a photo to share your culinary creations with others. Inspire fellow food lovers and make cooking fun!Submit your recipe and let others enjoy your culinary creations!Create and share recipes that bring flavor and joy to the kitchen!</p>
             </div>
             <form onSubmit={handleAddRecipe}>
                 <div className='grid grid-cols-1 md:grid-cols-2 gap-6'>

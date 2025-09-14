@@ -8,6 +8,8 @@ import Home from './components/Home.jsx';
 import MainLayout from './Layouts/MainLayout.jsx';
 import addRecipes from './components/addRecipes.jsx';
 import Headers from './components/Headers.jsx';
+import Register from './components/Register.jsx';
+import AuthProvider from './Context/AuthProvider.jsx';
 
 
 const router = createBrowserRouter([
@@ -15,21 +17,23 @@ const router = createBrowserRouter([
     path: "/",
     Component: MainLayout,
     children: [
-      {index: true, Component: Home},
-      // {
-      //   path: '/headers',
-      //   Component: Headers 
-      // },
-
-      {path:'/addRecipes',
+      { index: true, Component: Home },
+      {
+        path: '/addRecipes',
         Component: addRecipes
       }
     ]
   },
+  {
+    path: '/register',
+    Component: Register
+  }
 ]);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <AuthProvider>
+      <RouterProvider router={router} />
+    </AuthProvider>
   </StrictMode>,
 )

@@ -1,6 +1,7 @@
-import React, { useEffect, useState } from 'react';
+import React, { use, useEffect, useState } from 'react';
 import logo from '../assets/logo_4.jpg'
-import { NavLink } from 'react-router';
+import { Link, NavLink } from 'react-router';
+import { AuthContext } from '../Context/AuthContext';
 
 const Headers = () => {
 
@@ -13,9 +14,15 @@ const Headers = () => {
         }
     }, [menu])
 
+    const handleLogOut = () =>{
+        console.log("user trying to log out");
+
+         
+    }
+
     return (
 
-        <nav>
+        <nav className='my-5  top-0 left-0 w-full z-50'>
             <div className="navbar bg-base-100 w-full">
                 <div className="navbar-start">
                     <img className='w-10 h-10 rounded-full' src={logo} alt="" />
@@ -45,7 +52,8 @@ const Headers = () => {
                 }
                 </div>
                 <div className="navbar-end">
-                    <a className="btn">Button</a>
+                    <button onClick={handleLogOut} className='btn btn-secondary'>Log out</button>
+                    {/* <Link to='/auth/login'>Login</Link> */}
                 </div>
             </div>
         </nav>
