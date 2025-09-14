@@ -12,6 +12,7 @@ import Register from './components/Register.jsx';
 import AuthProvider from './Context/AuthProvider.jsx';
 import Login from './components/Login.jsx';
 import notFound from './components/notFound.jsx';
+import Slider from './components/Slider.jsx';
 
 
 const router = createBrowserRouter([
@@ -20,6 +21,10 @@ const router = createBrowserRouter([
     Component: MainLayout,
     children: [
       { index: true, Component: Home },
+      {
+        path: '/',
+        Component: Slider
+      },
       {
         path: '/addRecipes',
         Component: addRecipes
