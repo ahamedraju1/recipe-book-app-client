@@ -14,6 +14,7 @@ import Login from './components/Login.jsx';
 import notFound from './components/notFound.jsx';
 import Slider from './components/Slider.jsx';
 import TopRecipes from './components/TopRecipes.jsx';
+import recipeDetails from './components/recipeDetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -31,8 +32,15 @@ const router = createBrowserRouter([
         Component: TopRecipes
       },
       {
+        path: '/recipeDetails/:id',
+        Component: recipeDetails
+      },
+      {
         path: '/addRecipes',
         Component: addRecipes
+      },
+      {
+
       }
     ]
   },

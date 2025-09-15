@@ -1,44 +1,119 @@
 [
-  {
-    "id": 1,
-    "title": "Spaghetti Carbonara",
-    "image": "https://i.ibb.co.com/1JrFkm5f/give-me-some-mexican-food-items-it-would-be-single-dish-item.jpg",
-    "cuisine_type": "Italian",
-    "like_count": 1242
-  },
-  {
-    "id": 2,
-    "title": "Chicken Biryani",
-    "image": "https://i.ibb.co.com/tM132Z2b/fish-curry-item-1.jpg",
-    "cuisine_type": "Indian",
-    "like_count": 2421
-  },
-  {
-    "id": 3,
-    "title": "Sushi Platter",
-    "image": "https://i.ibb.co.com/kVXxMghk/rice-with-hilsa-fish.jpg",
-    "cuisine_type": "Japanese",
-    "like_count": 1253
-  },
-  {
-    "id": 4,
-    "title": "Tacos al Pastor",
-    "image": "https://i.ibb.co.com/jPzd2vq4/bengali-food-item-mutton-khichuri-with-eggs.jpg",
-    "cuisine_type": "Mexican",
-    "like_count": 2213
-  },
-  {
-    "id": 5,
-    "title": "French Croissant",
-    "image": "https://i.ibb.co.com/DPXQMK9h/Please-give-me-some-images-of-food-and-single-recipe-images.jpg",
-    "cuisine_type": "French",
-    "like_count": 1804
-  },
-  {
-    "id": 6,
-    "title": "Italian veg salad",
-    "image": "https://i.ibb.co.com/VY298Lf5/Please-give-me-some-images-of-food-and-single-recipe-images-1.jpg",
-    "cuisine_type": "Italian",
-    "like_count": 1421
-  }
+    {
+        "id": 1,
+        "title": "Spaghetti Carbonara",
+        "image": "https://i.ibb.co.com/1JrFkm5f/give-me-some-mexican-food-items-it-would-be-single-dish-item.jpg",
+        "cuisine_type": "Mexican",
+        "like_count": 1242,
+        "ingredients": [
+            "Spaghetti pasta",
+            "Eggs",
+            "Parmesan cheese",
+            "Crispy bacon or pancetta",
+            "Garlic",
+            "Fresh coriander",
+            "Jalapeños",
+            "Black pepper",
+            "Olive oil"
+        ],
+        "instructions": "Cook spaghetti until al dente. Fry bacon with garlic and jalapeños. Whisk eggs with parmesan. Mix hot pasta with bacon mixture, remove from heat, add egg-cheese mixture, and stir quickly to coat. Garnish with fresh coriander and serve warm."
+    },
+    {
+        "id": 2,
+        "title": "rice with fish-curry",
+        "image": "https://i.ibb.co.com/tM132Z2b/fish-curry-item-1.jpg",
+        "cuisine_type": "Bengali",
+        "like_count": 2421,
+        "ingredients": [
+            "Basmati rice",
+            "Fresh fish (like rohu or hilsa)",
+            "Mustard seeds",
+            "Turmeric powder",
+            "Red chili powder",
+            "Onions",
+            "Ginger-garlic paste",
+            "Mustard oil",
+            "Salt",
+            "Coriander leaves"
+        ],
+        "instructions": "Heat mustard oil, fry mustard seeds and onions, add ginger-garlic paste and spices. Add fish and cook gently. Prepare rice separately. Serve the fish curry hot over rice, garnished with coriander leaves."
+    },
+    {
+        "id": 3,
+        "title": "fish platter",
+        "image": "https://i.ibb.co.com/kVXxMghk/rice-with-hilsa-fish.jpg",
+        "cuisine_type": "indian",
+        "like_count": 1253,
+        "ingredients": [
+            "Hilsa fish or preferred fish",
+            "Basmati rice",
+            "Turmeric powder",
+            "Red chili powder",
+            "Ginger-garlic paste",
+            "Onions",
+            "Mustard seeds",
+            "Mustard oil",
+            "Salt",
+            "Fresh coriander"
+        ],
+        "instructions": "Marinate fish with turmeric and chili powder. Fry onions and mustard seeds in mustard oil. Add ginger-garlic paste and sauté. Cook rice separately. Combine fried fish with cooked rice and garnish with fresh coriander before serving."
+    },
+    {
+        "id": 4,
+        "title": "mutton khichuri",
+        "image": "https://i.ibb.co.com/jPzd2vq4/bengali-food-item-mutton-khichuri-with-eggs.jpg",
+        "cuisine_type": "Bengali",
+        "like_count": 2213,
+        "ingredients": [
+            "Basmati rice",
+            "Mutton pieces",
+            "Lentils (moong dal)",
+            "Onions",
+            "Ginger-garlic paste",
+            "Green chilies",
+            "Turmeric powder",
+            "Garam masala",
+            "Salt",
+            "Mustard oil",
+            "Boiled eggs (optional)"
+        ],
+        "instructions": "Heat mustard oil, sauté onions, ginger-garlic paste, and spices. Add mutton pieces and cook until browned. Add washed rice and lentils, stir, then add water and cook until rice and meat are tender. Garnish with boiled eggs and serve hot."
+    },
+    {
+        "id": 5,
+        "title": "French Croissant",
+        "image": "https://i.ibb.co.com/DPXQMK9h/Please-give-me-some-images-of-food-and-single-recipe-images.jpg",
+        "cuisine_type": "French",
+        "like_count": 1804,
+        "ingredients": [
+            "All-purpose flour",
+            "Unsalted butter",
+            "Warm milk",
+            "Sugar",
+            "Salt",
+            "Dry yeast",
+            "Egg (for egg wash)"
+        ],
+        "instructions": "Prepare yeast dough, fold with butter layers, shape into croissants, proof, brush with egg wash, and bake until golden."
+    },
+    {
+        "id": 6,
+        "title": "Italian veg salad",
+        "image": "https://i.ibb.co.com/VY298Lf5/Please-give-me-some-images-of-food-and-single-recipe-images-1.jpg",
+        "cuisine_type": "Italian",
+        "like_count": 1421,
+        "ingredients": [
+            "Cherry tomatoes",
+            "Cucumber",
+            "Red onion",
+            "Bell peppers",
+            "Black olives",
+            "Fresh basil leaves",
+            "Olive oil",
+            "Lemon juice",
+            "Salt",
+            "Black pepper"
+        ],
+        "instructions": "Chop all vegetables into bite-sized pieces, mix in a large bowl, drizzle with olive oil and lemon juice, season with salt and black pepper, and garnish with fresh basil before serving."
+    }
 ]
