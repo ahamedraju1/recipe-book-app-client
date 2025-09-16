@@ -13,36 +13,48 @@ import AuthProvider from './Context/AuthProvider.jsx';
 import Login from './components/Login.jsx';
 import notFound from './components/notFound.jsx';
 import Slider from './components/Slider.jsx';
-import TopRecipes from './components/TopRecipes.jsx';
+ 
 import recipeDetails from './components/recipeDetails.jsx';
+import AllRecipes from './components/AllRecipes.jsx';
+import RecipeCard from './components/RecipeCard.jsx';
+import TopRecipes from './components/TopRecipes.jsx';
 
 
 const router = createBrowserRouter([
   {
-    path: "/",
+    path: "",
     Component: MainLayout,
     children: [
-      { index: true, Component: Home },
       {
-        path: '/',
+        index: true, Component: Home,
+        loader: () => fetch('http://localhost:3000/recipes')
+      },
+      {
+        path: '',
         Component: Slider
       },
       {
-        path: '/',
+        path: '',
         Component: TopRecipes
       },
       {
-        path: '/recipeDetails/:id',
-        Component: recipeDetails
-      },
-      {
-        path: '/addRecipes',
-        Component: addRecipes
-      },
-      {
-
+        path: '',
+        Component: RecipeCard
       }
     ]
+  },
+  {
+    path: '/allRecipes',
+    Component: AllRecipes
+  },
+  {
+    path: '/addRecipes',
+    Component: addRecipes
+  },
+  {
+    path: '/recipeDetails/:id',
+    loader : ({params})=> fetch(`http://localhost:3000/recipes/${params.id}`),
+    Component: recipeDetails
   },
   {
     path: '/register',
@@ -58,6 +70,8 @@ const router = createBrowserRouter([
     Component: notFound
   }
 ]);
+
+
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>

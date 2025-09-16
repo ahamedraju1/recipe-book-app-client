@@ -13,7 +13,7 @@ const Slider = () => {
 
     return (
 
-        <div className='w-full pt-20'>
+        <div className='w-full pt-16'>
         <Swiper 
         modules={[Navigation,Pagination,Autoplay]}
          spaceBetween={30}

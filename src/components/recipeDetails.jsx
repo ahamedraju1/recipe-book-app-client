@@ -1,52 +1,85 @@
 import { useEffect, useState, } from 'react';
 import Headers from './Headers';
-import { Link, useParams } from 'react-router';
+import { Link, useLoaderData, useParams, } from 'react-router';
+import { AiOutlineLike } from "react-icons/ai";
 
 const recipeDetails = () => {
-    const [recipe, setRecipe] = useState([]);
     const { id } = useParams();
-
+    const  recipes = useLoaderData();
+    const [likeCount, setLikeCount] = useState(recipes);
+    const [recipe, setRecipe] = useState(null);
 
     useEffect(() => {
-        fetch('/public/recipes.json')
+        fetch('http://localhost:3000/recipes')
             .then(res => res.json())
             .then(data => {
-                const selectedRecipe = data.find((item) => item.id === Number(id));
-                setRecipe(selectedRecipe);
+                const selectedRecipe = data.find((item) => item._id === id);
+                setRecipe(selectedRecipe || null);
             })
+            .catch(error => console.log(error));
 
     }, [id])
+    if (!recipe) {
+        return <p className='text-center mt-10'>Loading recipe ...</p>
+    }
 
- 
+
+    const handleLikeCount = ()=>{
+        const newCount = likeCount + 1;
+        setLikeCount(newCount);
+
+        fetch(`http://localhost:3000/recipes/${id}`, {
+            method: "PATCH",
+            headers: {
+                "content-type" : "application/json"
+            },
+            body: JSON.stringify(newCount)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log("updated like count", data);
+        })
+    }
+
+
     return (
         <>
             <Headers />
-            <div>
+            <div className='mt-20'>
                 {
+                    <>
+                        <div>
+                            "likeCount  people interested in this recipe"
+                        </div>
 
-                    <div key={recipe.id} className="card bg-base-100 shadow-sm">
-                        <figure>
-                            <img
-                                src={recipe.image}
-                                alt="recipe images"
-                                className='w-full' />
-                        </figure>
-                        <div className="card-body">
-                            
-                            <h2 className="card-title text-2xl">
-                                 {recipe.title}
-                            </h2>
-                            <p className='text-lg'><span className='font-semibold text-xl'>Cuisine-type: </span>{recipe.cuisine_type}</p>
-                            <p className='text-lg'><span className='font-semibold text-xl'>Like-count: </span>{recipe.like_count}</p>
-                            <p className='text-lg'><span className='font-semibold text-xl'>Ingredients: </span>{recipe.ingredients}</p>
-                            <p className='text-lg'><span className='font-semibold text-xl'>Instruction: </span>{recipe.instructions}</p>
-                            <div className="card-actions justify-end">
-                             
-                              <Link to={`/allRecipes/${recipe.id}`} className='btn btn-secondary'>See All Recipes</Link>
+                        <div key={recipe._id} className="card bg-base-100 shadow-sm">
+                            <figure>
+                                <img
+                                    src={recipe.photo}
+                                    alt="recipe images"
+                                    className='w-full' />
+                            </figure>
+                            <div className="card-body">
+
+                                <h2 className="card-title text-2xl">
+                                    {recipe.title}
+                                </h2>
+                                <p className='text-lg'><span className='font-semibold text-xl'>Cuisine-type: </span>{recipe.cuisine}</p>
+                                <p className='text-lg'><span className='font-semibold text-xl'>Like-count: </span>{recipe.like}</p>
+                                <p className='text-lg'><span className='font-semibold text-xl'>Ingredients: </span>{recipe.ingredients}</p>
+                                <p className='text-lg'><span className='font-semibold text-xl'>Instruction: </span>{recipe.instruction}</p>
+
+                                <button onClick={handleLikeCount} className="btn btn-accent w-24">
+                                    Like <AiOutlineLike />
+
+                                </button>
+
+                                <div className="card-actions justify-end">
+                                    <Link to={'/allRecipes'} className='btn btn-secondary'>See All Recipes</Link>
+                                </div>
                             </div>
                         </div>
-                    </div>
-
+                    </>
                 }
             </div>
         </>

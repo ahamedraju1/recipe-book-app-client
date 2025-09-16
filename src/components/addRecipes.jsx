@@ -1,5 +1,6 @@
 import React from 'react';
 import Headers from './Headers';
+import Swal from 'sweetalert2';
 // import banner from '../assets/slider_2.jpg'
 
 const addRecipes = () => {
@@ -12,28 +13,34 @@ const addRecipes = () => {
         const recipes = Object.fromEntries(formData.entries());
         console.log(recipes);
 
-        //create a recipe
-        fetch('http://localhost:3000/recipes',{
+        //send data to the db
+        fetch('http://localhost:3000/recipes', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"
             },
             body: JSON.stringify(recipes)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log('created data from db', data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                if (data.insertedId) {
+                    Swal.fire({
+                        position: "top-end",
+                        icon: "success",
+                        title: "Your Recipe has been saved",
+                        showConfirmButton: false,
+                        timer: 1500
+                    });
+                    console.log("recipe added a successfully.",data);
+                    form.reset()
+                }
+            })
     }
 
     return (
         <>
-        <Headers/>
-        {/* <div className="my-12">
-        <div className='flex justify-center items-center absolute'>
-         <img className='object-cover relative w-[1280px] h-[600px]' src={banner} alt="" />
-        </div>
-        </div> */}
+            <Headers />
+         
             <div className='p-14 space-y-6 mt-32'>
                 <h1 className='text-6xl  text-center'>Add Recipes </h1>
                 <p className='text-center'>Add your favorite recipes to our collection! Include the ingredients, step-by-step instructions, and a photo to share your culinary creations with others. Inspire fellow food lovers and make cooking fun!Submit your recipe and let others enjoy your culinary creations!Create and share recipes that bring flavor and joy to the kitchen!</p>
@@ -94,9 +101,9 @@ const addRecipes = () => {
                     </fieldset>
                     <fieldset className="fieldset bg-base-200 border-base-300 rounded-box border p-4">
                         <label className="label">Like count</label>
-                        <input type="number" name='like' className="input w-full" placeholder="Like count" 
-                        defaultValue={0}
-                        min={0}
+                        <input type="number" name='like' className="input w-full" placeholder="Like count"
+                            defaultValue={0}
+                            min={0}
                         />
                     </fieldset>
                 </div>
