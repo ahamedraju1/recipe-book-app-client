@@ -13,11 +13,11 @@ import AuthProvider from './Context/AuthProvider.jsx';
 import Login from './components/Login.jsx';
 import notFound from './components/notFound.jsx';
 import Slider from './components/Slider.jsx';
- 
 import recipeDetails from './components/recipeDetails.jsx';
 import AllRecipes from './components/AllRecipes.jsx';
 import RecipeCard from './components/RecipeCard.jsx';
 import TopRecipes from './components/TopRecipes.jsx';
+import MyRecipes from './components/MyRecipes.jsx';
 
 
 const router = createBrowserRouter([
@@ -45,7 +45,12 @@ const router = createBrowserRouter([
   },
   {
     path: '/allRecipes',
+    loader : () => fetch('http://localhost:3000/recipes'),
     Component: AllRecipes
+  },
+  {
+    path: '/myRecipes',
+    Component: MyRecipes
   },
   {
     path: '/addRecipes',

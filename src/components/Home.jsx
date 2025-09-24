@@ -1,20 +1,27 @@
-import { useLoaderData } from 'react-router';
-import RecipeCard from './RecipeCard';
+import { Link, useLoaderData } from 'react-router';
 import TopRecipes from './TopRecipes';
- 
+import RecipeCard from './RecipeCard';
+
 
 const Home = () => {
     const recipes = useLoaderData();
     console.log(recipes);
 
-    return (
+    return ( 
 
-        <div className='mt-20 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-5 space-y-2'>
-             {
-                recipes.map((recipe)=> 
-                <TopRecipes key={recipe._id}  recipe={recipe}>
-                </TopRecipes> )
-             }
+        <div className='mt-24'>
+            {
+                recipes.map((recipe) =>
+                    <RecipeCard key={recipe._id} recipe={recipe}>
+                    </RecipeCard>)
+            }
+            <div className='my-10 shadow-gray-200'>
+                <h2 className='text-2xl text-center font-semibold'>Our Top Recipes Cuisines </h2>
+            </div>
+            <TopRecipes recipes={recipes} />
+            <div>
+                <Link to='/allRecipes' className='btn btn-secondary'>See All Recipe</Link>
+            </div>
         </div>
     );
 };

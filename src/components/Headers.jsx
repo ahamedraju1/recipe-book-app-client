@@ -42,7 +42,7 @@ const Headers = () => {
                     <NavLink to='/'>Home</NavLink>
                     <NavLink to='/allRecipes'>All Recipes</NavLink>
                     <NavLink to='/addRecipes'>Add Recipes</NavLink>
-                    <NavLink to='myRecipes'>My Recipes</NavLink>
+                    <NavLink to='/myRecipes'>My Recipes</NavLink>
 
 
                 </div>

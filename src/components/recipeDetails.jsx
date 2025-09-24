@@ -79,8 +79,10 @@ const recipeDetails = () => {
                                 </div>
                             </div>
                         </div>
+                       
                     </>
                 }
+                 
             </div>
         </>
     );
