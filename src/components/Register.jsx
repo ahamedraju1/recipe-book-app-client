@@ -1,14 +1,15 @@
 import React, { use } from 'react';
 import Headers from './Headers';
 import { AuthContext } from '../Context/AuthContext';
-import { Link } from 'react-router';
+import { Link, useLocation, useNavigate } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
 
 
 const Register = () => {
     const { createUser, googleSignIn } = use(AuthContext);
     console.log(createUser);
-  
+    // const location = useLocation();
+    const navigate = useNavigate();
 
     const handleGoogleSignUp = () =>{
         googleSignIn()
@@ -34,7 +35,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result)
-                
+                navigate("/login");
 
             })
             .catch(error => {

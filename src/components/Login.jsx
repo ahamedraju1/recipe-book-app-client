@@ -47,7 +47,7 @@ const Login = () => {
  <>
     
         <Headers/>
-         <div className="card bg-base-100 w-full mx-auto max-w-md mt-16 shadow-2xl">
+         <div className="card bg-base-100 w-full mx-auto max-w-md mt-30 md:mt-16 shadow-2xl">
                 <div className="card-body">
                     <h1 className="text-3xl font-bold text-center my-5">Please Login </h1>
                     <form onSubmit={handleLogIn} className="fieldset">
