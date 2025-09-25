@@ -3,7 +3,7 @@ import Headers from './Headers';
 import { Link, useLoaderData, useParams, } from 'react-router';
 import { AiOutlineLike } from "react-icons/ai";
 
-const recipeDetails = () => {
+const RecipeDetails = () => {
     const { id } = useParams();
     const  recipes = useLoaderData();
     const [likeCount, setLikeCount] = useState(recipes);
@@ -88,4 +88,4 @@ const recipeDetails = () => {
     );
 };
 
-export default recipeDetails;
+export default RecipeDetails;

@@ -22,7 +22,7 @@ const AllRecipes = () => {
             <div>
                 <Headers />
             </div>
-            <div className='mt-32 grid grid-cols-1 md:grid-cols-3 gap-5'>
+            <div key={recipes._id} className='mt-32 grid grid-cols-1 md:grid-cols-4 gap-5'>
                 {
                  recipes.map(recipe => (
                 <div className=''>
@@ -30,7 +30,7 @@ const AllRecipes = () => {
                         <figure>
                             <img
                                 src={recipe.photo}
-                                alt="Shoes"
+                                alt="recipe"
                                 className='w-full' />
                         </figure>
                         <div className="card-body">
@@ -41,7 +41,7 @@ const AllRecipes = () => {
                             <p>{recipe.like}</p>
 
                             <div className="card-actions justify-end">
-                                <Link to={`/recipeDetails/${recipe._id}`} className='btn btn-secondary'>View more</Link>
+                                <Link to={`/recipeDetails/${recipe._id}`} className='btn btn-secondary'>See Details</Link>
                             </div>
                         </div>
                     </div>

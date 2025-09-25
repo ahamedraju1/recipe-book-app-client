@@ -3,7 +3,7 @@ import Headers from './Headers';
 import Swal from 'sweetalert2';
 // import banner from '../assets/slider_2.jpg'
 
-const addRecipes = () => {
+const AddRecipes = () => {
 
     const handleAddRecipe = e => {
         e.preventDefault();
@@ -12,7 +12,9 @@ const addRecipes = () => {
         const formData = new FormData(form);
         const recipes = Object.fromEntries(formData.entries());
         console.log(recipes);
+        recipes.userId = localStorage.getItem("userId");
 
+        
         //send data to the db
         fetch('http://localhost:3000/recipes', {
             method: 'POST',
@@ -23,11 +25,14 @@ const addRecipes = () => {
         })
             .then(res => res.json())
             .then(data => {
+                if(data.user){
+                    localStorage.setItem("userId", data.user._id);
+                }
                 if (data.insertedId) {
                     Swal.fire({
                         position: "top-end",
                         icon: "success",
-                        title: "Your Recipe has been saved",
+                        title: "Your recipe added Successfully",
                         showConfirmButton: false,
                         timer: 1500
                     });
@@ -117,4 +122,4 @@ const addRecipes = () => {
     );
 };
 
-export default addRecipes;
+export default AddRecipes;

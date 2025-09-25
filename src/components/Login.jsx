@@ -2,6 +2,7 @@ import React, { use, useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router';
 import { FcGoogle } from "react-icons/fc";
 import { AuthContext } from '../Context/AuthContext';
+import Headers from './Headers';
 
 const Login = () => {
     const {userSignIn, googleSignIn} = use(AuthContext);
@@ -13,6 +14,7 @@ const Login = () => {
          googleSignIn()
          .then(result=>{
             console.log(result)
+            navigate(location?.state || "/");
          })
          .catch(error=>{
             console.log(error)
@@ -31,7 +33,7 @@ const Login = () => {
         userSignIn(email, password)
         .then(result=>{
             console.log(result)
-            navigate(location.state? location.state :  "/");
+            navigate(location?.state  ||  "/");
         })
         .catch(error=>{
             console.log(error)
@@ -42,6 +44,9 @@ const Login = () => {
 
 
     return (
+ <>
+    
+        <Headers/>
          <div className="card bg-base-100 w-full mx-auto max-w-md mt-16 shadow-2xl">
                 <div className="card-body">
                     <h1 className="text-3xl font-bold text-center my-5">Please Login </h1>
@@ -63,6 +68,7 @@ const Login = () => {
                     </button>
                 </div>
             </div>
+</>
     );
 };
 

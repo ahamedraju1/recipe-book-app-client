@@ -19,8 +19,8 @@ const Home = () => {
                 <h2 className='text-2xl text-center font-semibold'>Our Top Recipes Cuisines </h2>
             </div>
             <TopRecipes recipes={recipes} />
-            <div>
-                <Link to='/allRecipes' className='btn btn-secondary'>See All Recipe</Link>
+            <div className='flex justify-center items-center mt-10'>
+                <Link to='/allRecipes' className='btn btn-secondary w-lg'>See All Recipe</Link>
             </div>
         </div>
     );

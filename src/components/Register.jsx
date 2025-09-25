@@ -6,14 +6,15 @@ import { FcGoogle } from "react-icons/fc";
 
 
 const Register = () => {
-
     const { createUser, googleSignIn } = use(AuthContext);
     console.log(createUser);
+  
 
     const handleGoogleSignUp = () =>{
         googleSignIn()
         .then(result=>{
             console.log(result)
+            
         })
         .catch(error=>{
             console.log(error)
@@ -27,12 +28,14 @@ const Register = () => {
         const form = e.target;
         const formData = new FormData(form);
         const { email, password, ...restFormData } = Object.fromEntries(formData.entries());
-        // console.log(restFormData); 
+        console.log(restFormData); 
 
         //create a user
         createUser(email, password)
             .then(result => {
                 console.log(result)
+                
+
             })
             .catch(error => {
                 console.log(error)

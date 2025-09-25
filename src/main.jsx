@@ -6,18 +6,19 @@ import { createBrowserRouter } from "react-router";
 import { RouterProvider } from "react-router/dom";
 import Home from './components/Home.jsx';
 import MainLayout from './Layouts/MainLayout.jsx';
-import addRecipes from './components/addRecipes.jsx';
 import Headers from './components/Headers.jsx';
 import Register from './components/Register.jsx';
 import AuthProvider from './Context/AuthProvider.jsx';
 import Login from './components/Login.jsx';
 import notFound from './components/notFound.jsx';
 import Slider from './components/Slider.jsx';
-import recipeDetails from './components/recipeDetails.jsx';
 import AllRecipes from './components/AllRecipes.jsx';
 import RecipeCard from './components/RecipeCard.jsx';
 import TopRecipes from './components/TopRecipes.jsx';
 import MyRecipes from './components/MyRecipes.jsx';
+import PrivateRoute from './Routes/PrivateRoute.jsx';
+import AddRecipes from './components/AddRecipes.jsx';
+import RecipeDetails from './components/RecipeDetails.jsx';
 
 
 const router = createBrowserRouter([
@@ -27,7 +28,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true, Component: Home,
-        loader: () => fetch('http://localhost:3000/recipes')
+        loader: () => fetch('http://localhost:3000/recipes/home')
       },
       {
         path: '',
@@ -50,16 +51,17 @@ const router = createBrowserRouter([
   },
   {
     path: '/myRecipes',
-    Component: MyRecipes
+    element: <PrivateRoute> <MyRecipes/> </PrivateRoute>,
+    // loader : () => fetch('http://localhost:3000/myRecipes')
   },
   {
     path: '/addRecipes',
-    Component: addRecipes
+    element: <PrivateRoute> <AddRecipes/> </PrivateRoute>
   },
   {
     path: '/recipeDetails/:id',
     loader : ({params})=> fetch(`http://localhost:3000/recipes/${params.id}`),
-    Component: recipeDetails
+    element: <PrivateRoute> <RecipeDetails/> </PrivateRoute>
   },
   {
     path: '/register',

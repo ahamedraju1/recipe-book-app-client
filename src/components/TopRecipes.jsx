@@ -2,14 +2,11 @@ import React, { } from 'react';
 import { Link } from 'react-router';
 
 const TopRecipes = ({ recipes = [] }) => {
-
+    
 
     return (
         <>
-            {/* <div className='my-10 shadow-gray-200'>
-                <h2 className='text-2xl text-center font-semibold'>Our Top Recipes Cuisines </h2>
-            </div> */}
-
+            
             <div className=' grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-5 space-y-2'>
                 {
                     recipes.map(recipe => (
@@ -35,9 +32,7 @@ const TopRecipes = ({ recipes = [] }) => {
 
                     ))
                 }
-                {/* <div>
-                    <Link to='/allRecipes' className='btn btn-secondary'>See All Recipe</Link>
-                </div> */}
+                
             </div>
 
         </>
