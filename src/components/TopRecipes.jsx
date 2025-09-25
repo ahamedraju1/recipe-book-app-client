@@ -2,7 +2,7 @@ import React, { } from 'react';
 import { Link } from 'react-router';
 
 const TopRecipes = ({ recipes = [] }) => {
-    
+
 
     return (
         <>
@@ -18,11 +18,11 @@ const TopRecipes = ({ recipes = [] }) => {
                                     className='w-full' />
                             </figure>
                             <div className="card-body">
-                                <h2 className="card-title">
+                                <h2 className="card-title text-gray-500">
                                     {recipe.title}
                                 </h2>
-                                <p>{recipe.cuisine}</p>
-                                <p>{recipe.like}</p>
+                                <p className='text-gray-500'>{recipe.cuisine}</p>
+                                <p className='text-gray-500'>{recipe.like}</p>
 
                                 <div className="card-actions justify-end">
                                     <Link to={`/recipeDetails/${recipe._id}`} className='btn btn-secondary'>View more</Link>

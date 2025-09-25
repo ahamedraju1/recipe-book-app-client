@@ -5,6 +5,7 @@ import Slider from '../components/Slider';
 import TopRecipes from '../components/TopRecipes';
 import RecipeCard from '../components/RecipeCard';
 
+
 const MainLayout = () => {
 
     return (
