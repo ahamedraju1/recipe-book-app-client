@@ -21,6 +21,7 @@ import AddRecipes from './components/AddRecipes.jsx';
 import RecipeDetails from './components/RecipeDetails.jsx';
 import Footer from './Footer/Footer.jsx';
 import RecipeBook from './components/RecipeBook.jsx';
+import Blogs from './components/Blogs.jsx';
 
 
 const router = createBrowserRouter([
@@ -76,6 +77,10 @@ const router = createBrowserRouter([
   {
     path: '/recipeBook',
     Component: RecipeBook
+  },
+  {
+    path: '/blogs',
+    Component: Blogs
   },
 
   {

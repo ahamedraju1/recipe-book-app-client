@@ -6,6 +6,7 @@ import TopRecipes from '../components/TopRecipes';
 import RecipeCard from '../components/RecipeCard';
 import Footer from '../Footer/Footer';
 import RecipeBook from '../components/RecipeBook';
+import Blogs from '../components/Blogs';
 
 
 const MainLayout = () => {
@@ -22,6 +23,7 @@ const MainLayout = () => {
                 <TopRecipes></TopRecipes>
                 <RecipeCard></RecipeCard>
                 <RecipeBook></RecipeBook>
+                <Blogs></Blogs>
             </div>
              <Footer></Footer>
         </div>
