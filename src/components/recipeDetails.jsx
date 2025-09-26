@@ -48,16 +48,14 @@ const RecipeDetails = () => {
             <div className='mt-20'>
                 {
                     <>
-                        <div>
-                            "likeCount  people interested in this recipe"
-                        </div>
+                         
 
                         <div key={recipe._id} className="card bg-base-100 shadow-sm">
                             <figure>
                                 <img
                                     src={recipe.photo}
                                     alt="recipe images"
-                                    className='w-full' />
+                                    className='w-11/12 rounded-xl' />
                             </figure>
                             <div className="card-body">
 

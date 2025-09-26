@@ -97,7 +97,7 @@ const MyRecipes = () => {
                                 <img
                                     src={recipe.photo}
                                     alt="recipe"
-                                    className='w-full' />
+                                    className='w-full h-56 object-cover' />
                             </figure>
                             <div>
                                 <h2>{recipe.title}</h2>

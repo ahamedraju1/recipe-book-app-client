@@ -31,7 +31,7 @@ const AllRecipes = () => {
                             <img
                                 src={recipe.photo}
                                 alt="recipe"
-                                className='w-full' />
+                                className='w-full h-48 object-cover' />
                         </figure>
                         <div className="card-body">
                             <h2 className="card-title">
@@ -41,7 +41,7 @@ const AllRecipes = () => {
                             <p>{recipe.like}</p>
 
                             <div className="card-actions justify-end">
-                                <Link to={`/recipeDetails/${recipe._id}`} className='btn btn-secondary'>See Details</Link>
+                                <Link to={`/recipeDetails/${recipe._id}`} className='px-4 py-2 rounded bg-secondary text-white hover:bg-primary"'>See Details</Link>
                             </div>
                         </div>
                     </div>
