@@ -9,7 +9,7 @@ const Register = () => {
     const { createUser, googleSignIn } = use(AuthContext);
     console.log(createUser);
     // const location = useLocation();
-    const navigate = useNavigate();
+    // const navigate = useNavigate();
 
     const handleGoogleSignUp = () =>{
         googleSignIn()
@@ -35,7 +35,7 @@ const Register = () => {
         createUser(email, password)
             .then(result => {
                 console.log(result)
-                navigate("/login");
+                // navigate("/login");
 
             })
             .catch(error => {

@@ -19,6 +19,8 @@ import MyRecipes from './components/MyRecipes.jsx';
 import PrivateRoute from './Routes/PrivateRoute.jsx';
 import AddRecipes from './components/AddRecipes.jsx';
 import RecipeDetails from './components/RecipeDetails.jsx';
+import Footer from './Footer/Footer.jsx';
+import RecipeBook from './components/RecipeBook.jsx';
 
 
 const router = createBrowserRouter([
@@ -71,10 +73,19 @@ const router = createBrowserRouter([
     path: '/login',
     Component: Login
   },
+  {
+    path: '/recipeBook',
+    Component: RecipeBook
+  },
 
   {
     path: '/*',
     Component: notFound
+  },
+
+  {
+    path: '/footer',
+    Component: Footer
   }
 ]);
 

@@ -4,6 +4,8 @@ import Headers from '../components/Headers';
 import Slider from '../components/Slider';
 import TopRecipes from '../components/TopRecipes';
 import RecipeCard from '../components/RecipeCard';
+import Footer from '../Footer/Footer';
+import RecipeBook from '../components/RecipeBook';
 
 
 const MainLayout = () => {
@@ -12,13 +14,16 @@ const MainLayout = () => {
         <div>
             <div>
                  <Headers></Headers>
-            </div>
-            <div className='max-w-7xl mx-auto'>
                  <Slider></Slider>
+            </div>
+            
+            <div className='max-w-7xl mx-auto'>
                 <Outlet></Outlet>
                 <TopRecipes></TopRecipes>
                 <RecipeCard></RecipeCard>
+                <RecipeBook></RecipeBook>
             </div>
+             <Footer></Footer>
         </div>
     );
 };

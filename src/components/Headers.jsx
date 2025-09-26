@@ -49,9 +49,9 @@ const Headers = ({ darkMode }) => {
                 <div className="navbar bg-base-100 w-full md:flex items-center">
                     <div className="navbar-start">
                         <img className='w-10 h-10 rounded-full' src={logo} alt="" />
-                        <a className="text-lg md:text-xl lg:text-3xl pl-1 font-medium">RECIPE BOOK</a>
+                        <a className="text-md md:text-lg lg:text-xl pl-1 font-medium">RECIPE BOOK</a>
                     </div>
-                    <div className="navbar-center md:flex items-center gap-5 hidden md:text-xl lg:text-3xl font-medium md:ml-7">
+                    <div className="navbar-center md:flex items-center gap-5 hidden md:text-lg lg:text-xl font-medium md:ml-7">
 
                         <NavLink to='/'>Home</NavLink>
                         <NavLink to='/allRecipes'>All Recipes</NavLink>
