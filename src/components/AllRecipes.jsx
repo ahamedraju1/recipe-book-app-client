@@ -3,14 +3,16 @@ import Headers from './Headers';
 import { Link, useLoaderData } from 'react-router';
 
 const AllRecipes = () => {
+    //  const data = useLoaderData();
+    //    const recipes = Array.isArray(data) ? data : data?.recipes || [];
     const addedRecipes = useLoaderData();
-    const [recipes, setRecipe] = useState(addedRecipes )
+    const [recipes, setRecipe] = useState(addedRecipes);
     console.log(addedRecipes);
-
     // const { photo, title, cuisine, like } = recipes;
 
+
     useEffect(()=>{
-        fetch("http://localhost:3000/recipes")
+        fetch("https://recipe-book-app-flax.vercel.app/recipes")
         .then(res => res.json())
         .then(data => setRecipe(data));
 

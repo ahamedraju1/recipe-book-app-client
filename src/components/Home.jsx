@@ -7,8 +7,11 @@ import Headers from './Headers';
 
 const Home = () => {
     const [darkMode, setDarkMode] = useState(false);
-    const recipes = useLoaderData();
-    console.log(recipes);
+    const data = useLoaderData();
+    const recipes = data || [];
+    console.log(data);
+    console.log("recipes from loader:", recipes);
+
 
     const containerClass = darkMode
         ? 'min-h-screen bg-gray-900 text-white transition-colors duration-300'
@@ -38,6 +41,7 @@ const Home = () => {
                         <h2 className='text-2xl text-center font-semibold'>Our Top Recipes Cuisines </h2>
                     </div>
                     <TopRecipes recipes={recipes} />
+                    
                     <div className='flex justify-center items-center mt-10'>
                         <Link to='/allRecipes' className='btn btn-secondary w-lg'>See All Recipe</Link>
                     </div>

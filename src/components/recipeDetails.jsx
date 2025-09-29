@@ -5,12 +5,12 @@ import { AiOutlineLike } from "react-icons/ai";
 
 const RecipeDetails = () => {
     const { id } = useParams();
-    const  recipes = useLoaderData();
+    const recipes = useLoaderData();
     const [likeCount, setLikeCount] = useState(recipes);
     const [recipe, setRecipe] = useState(null);
 
     useEffect(() => {
-        fetch('http://localhost:3000/recipes')
+        fetch('https://recipe-book-app-flax.vercel.app/recipes')
             .then(res => res.json())
             .then(data => {
                 const selectedRecipe = data.find((item) => item._id === id);
@@ -24,21 +24,21 @@ const RecipeDetails = () => {
     }
 
 
-    const handleLikeCount = ()=>{
+    const handleLikeCount = () => {
         const newCount = likeCount + 1;
         setLikeCount(newCount);
 
-        fetch(`http://localhost:3000/recipes/${id}`, {
+        fetch(`https://recipe-book-app-flax.vercel.app/recipes/${id}`, {
             method: "PATCH",
             headers: {
-                "content-type" : "application/json"
+                "content-type": "application/json"
             },
             body: JSON.stringify(newCount)
         })
-        .then(res => res.json())
-        .then(data => {
-            console.log("updated like count", data);
-        })
+            .then(res => res.json())
+            .then(data => {
+                console.log("updated like count", data);
+            })
     }
 
 
@@ -48,7 +48,7 @@ const RecipeDetails = () => {
             <div className='mt-20'>
                 {
                     <>
-                         
+
 
                         <div key={recipe._id} className="card bg-base-100 shadow-sm">
                             <figure>
@@ -77,10 +77,10 @@ const RecipeDetails = () => {
                                 </div>
                             </div>
                         </div>
-                       
+
                     </>
                 }
-                 
+
             </div>
         </>
     );

@@ -1,23 +1,19 @@
 import React, { useEffect, useState } from 'react';
 import Headers from './Headers';
-import { useLoaderData } from 'react-router';
 import Swal from 'sweetalert2';
 
 
 const MyRecipes = () => {
-    // const  recipes = useLoaderData();
-    // console.log(recipes);
     const [recipes, setRecipes] = useState([]);
     const userId = localStorage.getItem("userId");
     console.log(userId);
-    // Example: temporary "user123" for testing
-    // localStorage.setItem("userId", "user123");
+     
 
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [selectedRecipe, setSelectedRecipe] = useState(null);
 
     useEffect(() => {
-        fetch(`http://localhost:3000/myRecipes?userId=${userId}`)
+        fetch(`https://recipe-book-app-flax.vercel.app/myRecipes?userId=${userId}`)
             .then(res => res.json())
             .then(data => setRecipes(data))
     }, [userId])
@@ -29,9 +25,9 @@ const MyRecipes = () => {
         const form = e.target;
         const formData = new FormData(form);
         const updatedRecipe = Object.fromEntries(formData.entries());
-        // console.log(updatedRecipe);
+        console.log(updatedRecipe);
 
-        const res = await fetch(`http://localhost:3000/recipes/${selectedRecipe._id}`, {
+        const res = await fetch(`https://recipe-book-app-flax.vercel.app/recipes/${selectedRecipe._id}`, {
             method: "PUT",
             headers: {
                 "content-type": "application/json"
@@ -64,7 +60,7 @@ const MyRecipes = () => {
 
         if (!result.isConfirmed) return;
 
-        const res = await fetch(`http://localhost:3000/recipes/${id}`, {
+        const res = await fetch(`https://recipe-book-app-flax.vercel.app/recipes/${id}`, {
             method: "DELETE",
         });
 

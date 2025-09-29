@@ -31,7 +31,7 @@ const router = createBrowserRouter([
     children: [
       {
         index: true, Component: Home,
-        loader: () => fetch('http://localhost:3000/recipes/home')
+        loader: () => fetch('https://recipe-book-app-flax.vercel.app/recipes/home')
       },
       {
         path: '',
@@ -49,13 +49,13 @@ const router = createBrowserRouter([
   },
   {
     path: '/allRecipes',
-    loader : () => fetch('http://localhost:3000/recipes'),
-    Component: AllRecipes
+    Component: AllRecipes,
+    loader : () => fetch('https://recipe-book-app-flax.vercel.app/recipes')
   },
   {
     path: '/myRecipes',
     element: <PrivateRoute> <MyRecipes/> </PrivateRoute>,
-    // loader : () => fetch('http://localhost:3000/myRecipes')
+    // loader : () => fetch('https://recipe-book-app-flax.vercel.app/myRecipes')
   },
   {
     path: '/addRecipes',
@@ -63,7 +63,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/recipeDetails/:id',
-    loader : ({params})=> fetch(`http://localhost:3000/recipes/${params.id}`),
+    loader : ({params})=> fetch(`https://recipe-book-app-flax.vercel.app/recipes/${params.id}`),
     element: <PrivateRoute> <RecipeDetails/> </PrivateRoute>
   },
   {

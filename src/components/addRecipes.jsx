@@ -1,9 +1,11 @@
 import React from 'react';
 import Headers from './Headers';
 import Swal from 'sweetalert2';
+import {} from 'react-router';
 // import banner from '../assets/slider_2.jpg'
 
 const AddRecipes = () => {
+ 
 
     const handleAddRecipe = e => {
         e.preventDefault();
@@ -16,7 +18,7 @@ const AddRecipes = () => {
 
         
         //send data to the db
-        fetch('http://localhost:3000/recipes', {
+        fetch('https://recipe-book-app-flax.vercel.app/recipes', {
             method: 'POST',
             headers: {
                 "content-type": "application/json"
